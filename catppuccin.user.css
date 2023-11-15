@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name NPM Catppuccin
-@namespace github.com/uncenter/ctp-npmjs.com/npm
-@homepageURL https://github.com/uncenter/ctp-npmjs/tree/main/npm
+@namespace github.com/uncenter/ctp-npmjs.com
+@homepageURL https://github.com/uncenter/ctp-npmjs.com
 @version 0.0.1
 @updateURL https://github.com/uncenter/ctp-npmjs.com/raw/main/catppuccin.user.css
 @description Soothing pastel theme for NPM
@@ -57,44 +57,193 @@
 		@crust: @catppuccin[@@lookup][@crust];
 		@accent-color: @catppuccin[@@lookup][@@accent];
 
-		// now colors can be used with their regular names
-		background-color: @base;
-
-		/*  If you need to specify an overwrite specific to a Flavor
-      *  like Latte, you can use a `when` guard clause. */
-		& when (@lookup = latte) {
-			/* your code for latte */
+		& {
+			background-color: @base !important;
 		}
 
-		/*  You can also negate the statement above by using
-      *  a `when not` guard clause. */
-		& when not (@lookup = latte) {
-			/* your code for frappe, macchiato and mocha */
+		/* Primary background */
+		.bg-white,
+		._4ea0e50d,
+		.cd2827bb {
+			background-color: @base;
+		}
+
+		/* Inverse text */
+		.white {
+			color: @base;
+		}
+
+		/* Primary text */
+		._99e3854f,
+		.c6c55db4,
+		.black,
+		.black-90,
+		.black-80,
+		._0b9b6c57,
+		._1b8c0a9f {
+			color: @text;
+		}
+
+		/* Secondary text */
+		.black-70,
+		.black-60,
+		.cd2827bb a {
+			color: @subtext0;
+		}
+		._66c2abad {
+			color: @overlay0;
+		}
+
+		/* Background layer background */
+		._7eb68a55,
+		.e9998f88 {
+			background-color: @mantle;
+		}
+
+		/* Search box */
+		._2f299eeb {
+			background-color: @crust;
+		}
+		input._390acbc5::placeholder {
+			color: @overlay1;
+		}
+		.dde91b96 {
+			border-color: @crust;
+
+			&:focus-within {
+				border-color: @subtext1;
+			}
+		}
+		._0da775bb {
+			background-color: @subtext1;
+		}
+
+		/* Profile */
+		._59b94eb6::after {
+			border-bottom-color: @base;
+		}
+		img[alt="avatar"] + div > svg {
+			fill: @text;
+		}
+		._9e2bd439 a:hover,
+		._9e2bd439 a:focus {
+			background-color: @crust;
+		}
+
+		/* Dividers and box borders */
+		._5d3decdb,
+		.f85080bd,
+		.b--black-10 {
+			border-color: @surface0;
+			border-bottom-color: @surface0;
+		}
+
+		/* Heart icon */
+		._0edb515f {
+			color: @text;
+		}
+
+		/* Npm logo header */
+		a[href="/"] > svg > path {
+			fill: @text;
+		}
+
+		/* Header border gradient */
+		.e7070742 {
+			border-image: linear-gradient(139deg, @peach, @maroon, @red, @pink) 3;
+		}
+
+		/* Npm logo footer */
+		footer {
+			a[href="https://github.com/npm"] svg
+			{
+				& > polygon {
+					fill: @base;
+				}
+
+				& > rect {
+					fill: @text;
+				}
+			}
+			a[href="https://github.com"] svg
+			{
+				fill: @text;
+			}
+		}
+
+		/* Discover packages section */
+		._5d3decdb {
+			color: @text;
+		}
+		.efc7b1c8:nth-of-type(6n + 1):hover {
+			background-color: rgba(137, 86, 255, 0.2);
+		}
+
+		.efc7b1c8:nth-of-type(6n + 1):hover ._5d3decdb {
+			color: @mauve;
+			border-bottom-color: @mauve;
+		}
+
+		.efc7b1c8:nth-of-type(6n + 2):hover {
+			background-color: rgba(0, 198, 66, 0.2);
+		}
+
+		.efc7b1c8:nth-of-type(6n + 2):hover ._5d3decdb {
+			color: @green;
+			border-bottom-color: @green;
+		}
+
+		.efc7b1c8:nth-of-type(6n + 3):hover {
+			background-color: rgba(41, 171, 226, 0.2);
+		}
+
+		.efc7b1c8:nth-of-type(6n + 3):hover ._5d3decdb {
+			color: @sky;
+			border-bottom-color: @sky;
+		}
+
+		.efc7b1c8:nth-of-type(6n + 4):hover {
+			background-color: rgba(203, 56, 55, 0.2);
+		}
+
+		.efc7b1c8:nth-of-type(6n + 4):hover ._5d3decdb {
+			color: @red;
+			border-bottom-color: @red;
+		}
+
+		.efc7b1c8:nth-of-type(6n + 5):hover {
+			background-color: rgba(255, 205, 58, 0.2);
+		}
+
+		.efc7b1c8:nth-of-type(6n + 5):hover ._5d3decdb {
+			color: @yellow;
+			border-bottom-color: @yellow;
+		}
+
+		.efc7b1c8:nth-of-type(6n + 6):hover {
+			background-color: rgba(200, 54, 195, 0.2);
+		}
+
+		.efc7b1c8:nth-of-type(6n + 6):hover ._5d3decdb {
+			color: @pink;
+			border-bottom-color: @pink;
+		}
+
+		.efc7b1c8:hover ._5d3decdb {
+			border-top-color: transparent;
+			border-right-color: transparent;
+			border-left-color: transparent;
 		}
 	}
 
-	/*  Application of the Theme
-    *  The values below are examples and may need to be adapted.
-    *  To apply the correct Theming call the above defined Mixin and pass
-    *  your desired Flavor and Accent Color to it. These are usually
-    *  populated through the `@var`s in the Meta Block. */
-	// synced colorscheme
 	@media (prefers-color-scheme: light) {
-		.no-theme {
+		:root {
 			#catppuccin(@lightFlavor, @accentColor);
 		}
 	}
 	@media (prefers-color-scheme: dark) {
-		.no-theme {
+		:root {
 			#catppuccin(@darkFlavor, @accentColor);
 		}
-	}
-
-	// manually set colorscheme
-	.light-theme {
-		#catppuccin(@lightFlavor, @accentColor);
-	}
-	.dark-theme {
-		#catppuccin(@darkFlavor, @accentColor);
 	}
 }

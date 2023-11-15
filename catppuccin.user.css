@@ -175,64 +175,172 @@
 		._5d3decdb {
 			color: @text;
 		}
-		.efc7b1c8:nth-of-type(6n + 1):hover {
-			background-color: rgba(137, 86, 255, 0.2);
-		}
-
 		.efc7b1c8:nth-of-type(6n + 1):hover ._5d3decdb {
 			color: @mauve;
 			border-bottom-color: @mauve;
 		}
-
-		.efc7b1c8:nth-of-type(6n + 2):hover {
-			background-color: rgba(0, 198, 66, 0.2);
-		}
-
 		.efc7b1c8:nth-of-type(6n + 2):hover ._5d3decdb {
 			color: @green;
 			border-bottom-color: @green;
 		}
-
-		.efc7b1c8:nth-of-type(6n + 3):hover {
-			background-color: rgba(41, 171, 226, 0.2);
-		}
-
 		.efc7b1c8:nth-of-type(6n + 3):hover ._5d3decdb {
 			color: @sky;
 			border-bottom-color: @sky;
 		}
-
-		.efc7b1c8:nth-of-type(6n + 4):hover {
-			background-color: rgba(203, 56, 55, 0.2);
-		}
-
 		.efc7b1c8:nth-of-type(6n + 4):hover ._5d3decdb {
 			color: @red;
 			border-bottom-color: @red;
 		}
-
-		.efc7b1c8:nth-of-type(6n + 5):hover {
-			background-color: rgba(255, 205, 58, 0.2);
-		}
-
 		.efc7b1c8:nth-of-type(6n + 5):hover ._5d3decdb {
 			color: @yellow;
 			border-bottom-color: @yellow;
 		}
-
-		.efc7b1c8:nth-of-type(6n + 6):hover {
-			background-color: rgba(200, 54, 195, 0.2);
-		}
-
 		.efc7b1c8:nth-of-type(6n + 6):hover ._5d3decdb {
 			color: @pink;
 			border-bottom-color: @pink;
 		}
 
-		.efc7b1c8:hover ._5d3decdb {
-			border-top-color: transparent;
-			border-right-color: transparent;
-			border-left-color: transparent;
+		/* Package tabs */
+		._8055e658._7aa1ee94 {
+			color: @red;
+			border-color: @red;
+		}
+		._8055e658._7aa1ee94:hover {
+			background: rgb(250, 235, 235);
+		}
+		._8055e658._7aa1ee94.ac5f7ef8 {
+			background-color: rgba(203, 56, 55, 0.15);
+		}
+		._8055e658._7aa1ee94 ._38ce9a85 {
+			color: @red;
+		}
+		._8055e658._7aa1ee94 svg,
+		._8055e658._7aa1ee94 .c3fc8940 {
+			fill: rgb(108, 30, 30);
+		}
+		._8055e658.d9f99065 {
+			color: @yellow;
+			border-color: @yellow;
+		}
+		._8055e658.d9f99065:hover {
+			background: rgb(255, 249, 229);
+		}
+		._8055e658.d9f99065.ac5f7ef8 {
+			background-color: rgba(255, 205, 58, 0.2);
+		}
+		._8055e658.d9f99065 ._38ce9a85 {
+			color: @peach;
+		}
+		._8055e658.d9f99065 svg,
+		._8055e658.d9f99065 .c3fc8940 {
+			fill: rgb(209, 157, 0);
+		}
+		._8055e658._2a0881eb {
+			border-color: @green;
+		}
+		._8055e658._2a0881eb:hover {
+			background: rgb(214, 255, 228);
+		}
+		._8055e658._2a0881eb.ac5f7ef8 {
+			background-color: rgba(0, 198, 66, 0.2);
+		}
+		._8055e658._2a0881eb ._38ce9a85 {
+			color: @green;
+		}
+		._8055e658._2a0881eb svg,
+		._8055e658._2a0881eb .c3fc8940 {
+			fill: @green;
+		}
+		._8055e658._7cec0316 {
+			border-color: @mauve;
+		}
+		._8055e658._7cec0316:hover {
+			background: rgb(237, 229, 255);
+		}
+		._8055e658._7cec0316.ac5f7ef8 {
+			background-color: rgba(137, 86, 255, 0.2);
+		}
+		._8055e658._7cec0316 ._38ce9a85 {
+			color: @mauve;
+		}
+		._8055e658._7cec0316 svg,
+		._8055e658._7cec0316 .c3fc8940 {
+			fill: @mauve;
+		}
+		._8055e658.c1f85151 {
+			border-color: @pink;
+		}
+		._8055e658.c1f85151:hover {
+			background: rgb(250, 235, 249);
+		}
+		._8055e658.c1f85151.ac5f7ef8 {
+			background-color: rgba(200, 54, 195, 0.2);
+		}
+		._8055e658.c1f85151 ._38ce9a85 {
+			color: @pink;
+		}
+		._8055e658.c1f85151 svg,
+		._8055e658.c1f85151 .c3fc8940 {
+			fill: @pink;
+		}
+		._8055e658.b4fcfd19 {
+			border-color: @sky;
+		}
+		._8055e658.b4fcfd19:hover {
+			background: rgb(233, 246, 252);
+		}
+		._8055e658.b4fcfd19.ac5f7ef8 {
+			background-color: rgba(41, 171, 226, 0.2);
+		}
+		._8055e658.b4fcfd19 ._38ce9a85 {
+			color: @sapphire;
+		}
+		._8055e658.b4fcfd19 svg,
+		._8055e658.b4fcfd19 .c3fc8940 {
+			fill: @sky;
+		}
+		.a17280e0 {
+			color: @green;
+			border-color: @green;
+		}
+
+		/* Package page sidebar icons */
+		._5cfc0900 svg,
+		.b5be2af6 svg,
+		.fbd04dd1 svg,
+		[aria-labelledby="repository repository-link"] svg g {
+			fill: @text;
+		}
+		.f97c6116,
+		n {
+			fill: @green;
+		}
+
+		/* Provenance popup */
+		._320e04bc {
+			background-color: @base;
+		}
+		._9666fddd,
+		._861fb12a {
+			color: @subtext0;
+		}
+		._1e07caeb {
+			color: @text;
+		}
+		._320e04bc::after {
+			border-color: transparent transparent @base;
+		}
+		._320e04bc::before {
+			border-color: transparent transparent @surface0;
+		}
+		._320e04bc,
+		.f895b582 {
+			border-color: @surface0;
+		}
+
+		/* Package page sidebar text */
+		.c84e15be {
+			color: @subtext0;
 		}
 	}
 

@@ -105,6 +105,7 @@
 			button[type="submit"] {
 				background-color: @subtext1;
 			}
+
 			& > div {
 				border-color: @crust;
 
@@ -132,61 +133,74 @@
 			background-color: @mauve;
 		}
 
-		/* Profile */
-		._59b94eb6::after {
-			border-bottom-color: @base;
-		}
-		img[alt="avatar"] + div > svg {
-			fill: @text;
-		}
-		._9e2bd439 a:hover,
-		._9e2bd439 a:focus {
-			background-color: @crust;
-		}
-		._59b94eb6 {
-			border-color: @surface0;
-		}
-		._59b94eb6::before {
+		header {
 			border-bottom-color: @surface0;
-		}
-		._07ec5156 {
-			border-color: @surface0;
-			color: @red;
-			svg {
-				fill: @red;
+
+			/* Top bar gradient */
+			.e7070742 {
+				border-image: linear-gradient(139deg, @peach, @maroon, @red, @pink) 3;
 			}
-		}
-		.d70fa54a {
-			border-bottom-color: @surface1;
+
+			/* Heart icon */
+			._0edb515f {
+				color: @text;
+			}
+
+			/* Logo */
+			a[href="/"] > svg > path {
+				fill: @text;
+			}
+
+			/* Profile */
+			nav > button[aria-label="Profile menu"] {
+				/* Profile dropdown arrow */
+				img[alt="avatar"] + div > svg {
+					fill: @text;
+				}
+				/* Profile popup */
+				+ span > div {
+					border-color: @surface0;
+
+					/* Popup triangle */
+					&::after {
+						border-bottom-color: @base;
+					}
+					&::before {
+						border-bottom-color: @surface0;
+					}
+
+					/* Username */
+					h2 {
+						border-bottom-color: @surface1;
+					}
+
+					/* Navigation options */
+					ul li a {
+						&:hover,
+						&:focus {
+							background-color: @crust;
+						}
+
+						/* Red "Add Organization" button */
+						&[href="/org/create"] {
+							border-color: @surface0;
+							color: @red;
+							svg {
+								fill: @red;
+							}
+						}
+					}
+				}
+			}
 		}
 
 		/* Dividers and box borders */
-		._5d3decdb,
-		.f85080bd,
+		.f85080bd, /* Popular libraries section */
 		.b--black-10 {
 			border-color: @surface0;
 			border-bottom-color: @surface0;
 		}
-		header {
-			border-bottom-color: @surface0;
-		}
 
-		/* Heart icon */
-		._0edb515f {
-			color: @text;
-		}
-
-		/* Npm logo header */
-		a[href="/"] > svg > path {
-			fill: @text;
-		}
-
-		/* Header border gradient */
-		.e7070742 {
-			border-image: linear-gradient(139deg, @peach, @maroon, @red, @pink) 3;
-		}
-
-		/* Npm logo footer */
 		footer {
 			a[href="https://github.com/npm"] svg
 			{
@@ -205,32 +219,35 @@
 		}
 
 		/* Discover packages section */
-		._5d3decdb {
-			color: @text;
-		}
-		.efc7b1c8:nth-of-type(6n + 1):hover ._5d3decdb {
-			color: @mauve;
-			border-bottom-color: @mauve;
-		}
-		.efc7b1c8:nth-of-type(6n + 2):hover ._5d3decdb {
-			color: @green;
-			border-bottom-color: @green;
-		}
-		.efc7b1c8:nth-of-type(6n + 3):hover ._5d3decdb {
-			color: @sky;
-			border-bottom-color: @sky;
-		}
-		.efc7b1c8:nth-of-type(6n + 4):hover ._5d3decdb {
-			color: @red;
-			border-bottom-color: @red;
-		}
-		.efc7b1c8:nth-of-type(6n + 5):hover ._5d3decdb {
-			color: @yellow;
-			border-bottom-color: @yellow;
-		}
-		.efc7b1c8:nth-of-type(6n + 6):hover ._5d3decdb {
-			color: @pink;
-			border-bottom-color: @pink;
+		ul[aria-labelledby="discover-packages-header"] {
+			li a {
+				color: @text;
+				border-color: @surface0;
+			}
+			li:nth-of-type(6n + 1):hover a {
+				color: @mauve;
+				border-bottom-color: @mauve;
+			}
+			li:nth-of-type(6n + 2):hover a {
+				color: @green;
+				border-bottom-color: @green;
+			}
+			li:nth-of-type(6n + 3):hover a {
+				color: @sky;
+				border-bottom-color: @sky;
+			}
+			li:nth-of-type(6n + 4):hover a {
+				color: @red;
+				border-bottom-color: @red;
+			}
+			li:nth-of-type(6n + 5):hover a {
+				color: @yellow;
+				border-bottom-color: @yellow;
+			}
+			li:nth-of-type(6n + 6):hover a {
+				color: @pink;
+				border-bottom-color: @pink;
+			}
 		}
 
 		/* Package "public" text */
@@ -239,63 +256,49 @@
 		}
 
 		/* Package tabs */
-		._8055e658._7aa1ee94 {
-			color: @red;
-			border-color: @red;
-		}
-		._8055e658._7aa1ee94 ._38ce9a85 {
-			color: @red;
-		}
-		._8055e658.d9f99065 {
-			color: @yellow;
-			border-color: @yellow;
-		}
-		._8055e658.d9f99065 ._38ce9a85 {
-			color: @peach;
-		}
-		._8055e658._2a0881eb {
-			border-color: @green;
-		}
-		._8055e658._2a0881eb ._38ce9a85 {
-			color: @green;
-		}
-		._8055e658._2a0881eb svg,
-		._8055e658._2a0881eb .c3fc8940 {
-			fill: @green;
-		}
-		._8055e658._7cec0316 {
-			border-color: @mauve;
-		}
-		._8055e658._7cec0316 ._38ce9a85 {
-			color: @mauve;
-		}
-		._8055e658._7cec0316 svg,
-		._8055e658._7cec0316 .c3fc8940 {
-			fill: @mauve;
-		}
-		._8055e658.c1f85151 {
-			border-color: @pink;
-		}
-		._8055e658.c1f85151 ._38ce9a85 {
-			color: @pink;
-		}
-		._8055e658.c1f85151 svg,
-		._8055e658.c1f85151 .c3fc8940 {
-			fill: @pink;
-		}
-		._8055e658.b4fcfd19 {
-			border-color: @sky;
-		}
-		._8055e658.b4fcfd19 ._38ce9a85 {
-			color: @sapphire;
-		}
-		._8055e658.b4fcfd19 svg,
-		._8055e658.b4fcfd19 .c3fc8940 {
-			fill: @sky;
-		}
-		.a17280e0 {
-			color: @green;
-			border-color: @green;
+		ul[aria-owns*="package-tab-"] {
+			li {
+				&:has([id="package-tab-readme"]) {
+					border-color: @yellow;
+
+					a {
+						color: @yellow;
+					}
+				}
+				&:has([id="package-tab-code"]),
+				&:has([id="package-tab-admin"]) {
+					border-color: @red;
+
+					a {
+						color: @red;
+
+						.a17280e0 {
+							color: @green;
+						}
+					}
+				}
+				&:has([id="package-tab-dependents"]) {
+					border-color: @mauve;
+
+					a {
+						color: @mauve;
+					}
+				}
+				&:has([id="package-tab-dependencies"]) {
+					border-color: @pink;
+
+					a {
+						color: @pink;
+					}
+				}
+				&:has([id="package-tab-versions"]) {
+					border-color: @sapphire;
+
+					a {
+						color: @sapphire;
+					}
+				}
+			}
 		}
 
 		/* Package page sidebar icons */
@@ -305,8 +308,7 @@
 		[aria-labelledby="repository repository-link"] svg g {
 			fill: @text;
 		}
-		.f97c6116,
-		n {
+		.f97c6116 {
 			fill: @green;
 		}
 
@@ -363,7 +365,7 @@
 			strong {
 				color: @text;
 			}
-			.highlight pre,
+			pre,
 			code {
 				background-color: lighten(@surface0, 5%);
 			}

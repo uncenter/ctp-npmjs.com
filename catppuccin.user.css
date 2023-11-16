@@ -100,39 +100,6 @@
 			color: @base;
 		}
 
-		/* Search box */
-		form#search {
-			button[type="submit"] {
-				background-color: @subtext1;
-			}
-
-			& > div {
-				border-color: @crust;
-
-				&:focus-within {
-					border-color: @subtext1;
-				}
-
-				& > div {
-					background-color: @crust;
-					span svg g[stroke="#777777"] {
-						stroke: @subtext0;
-					}
-					input[type="search"] {
-						color: @overlay1;
-						&::placeholder {
-							color: @overlay1;
-						}
-					}
-				}
-			}
-		}
-
-		/* Search results */
-		#pkg-list-exact-match {
-			background-color: @mauve;
-		}
-
 		header {
 			border-bottom-color: @surface0;
 
@@ -149,6 +116,48 @@
 			/* Logo */
 			a[href="/"] > svg > path {
 				fill: @text;
+			}
+
+			/* Search box */
+			form#search {
+				button[type="submit"] {
+					background-color: @subtext1;
+				}
+
+				& > div {
+					border-color: @crust;
+
+					&:focus-within {
+						border-color: @subtext1;
+					}
+
+					& > div {
+						background-color: @crust;
+
+						span svg g[stroke="#777777"] {
+							stroke: @subtext0;
+						}
+
+						input[type="search"] {
+							color: @overlay1;
+
+							&::placeholder {
+								color: @overlay1;
+							}
+
+							&::-webkit-search-cancel-button {
+								display: none;
+							}
+						}
+					}
+
+					ul[aria-label="Search results"] {
+						li {
+							border-bottom-color: @surface0;
+							color: @text;
+						}
+					}
+				}
 			}
 
 			/* Profile */

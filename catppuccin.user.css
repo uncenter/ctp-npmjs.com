@@ -317,31 +317,39 @@
 		[aria-labelledby="repository repository-link"] svg g {
 			fill: @text;
 		}
-		.f97c6116 {
-			fill: @green;
-		}
 
 		/* Provenance popup/box */
-		._320e04bc {
-			background-color: @base;
+		button[aria-label="View more provenance details"] {
+			& + div > div > div {
+				background-color: @base;
+				border-color: @surface0;
+
+				&::after {
+					border-bottom-color: @base;
+				}
+
+				&::before {
+					border-bottom-color: @surface0;
+				}
+
+				& > div {
+					div:nth-of-type(2) {
+						border-color: @surface0;
+					}
+				}
+			}
+		}
+		._1e07caeb {
+			color: @text;
 		}
 		._9666fddd,
 		._861fb12a,
 		._2160593e {
 			color: @subtext0;
 		}
-		._1e07caeb {
-			color: @text;
-		}
-		._320e04bc::after {
-			border-color: transparent transparent @base;
-		}
-		._320e04bc::before {
-			border-color: transparent transparent @surface0;
-		}
-		._320e04bc,
-		.f895b582 {
-			border-color: @surface0;
+		/* Provenance icon */
+		.f97c6116 {
+			fill: @green;
 		}
 
 		/* Package page sidebar text */
@@ -403,22 +411,27 @@
 		}
 
 		/* Keywords, share feedback link */
-		.a0dff0b1,
-		._9d38ab88 {
+		#user-content-keywords,
+		#user-content-provenance a[href=" https://github.com/npm/feedback"]
+		{
 			color: @text;
-		}
-
-		li._8a646b6d:hover {
-			background-color: @crust;
 		}
 
 		/* Settings pages */
 		._7fb5e603 h1 {
 			color: @text;
 		}
-		._55741ad1 {
+		#organizationsHeader + a[href="/org/create"] {
 			color: @green;
 			border-color: @green;
+
+			&:hover {
+				color: @mantle;
+				background-color: @green;
+			}
+		}
+		li._8a646b6d:hover {
+			background-color: @crust;
 		}
 		.e9998f88 {
 			box-shadow: none;

@@ -316,12 +316,13 @@
 			fill: @green;
 		}
 
-		/* Provenance popup */
+		/* Provenance popup/box */
 		._320e04bc {
 			background-color: @base;
 		}
 		._9666fddd,
-		._861fb12a {
+		._861fb12a,
+		._2160593e {
 			color: @subtext0;
 		}
 		._1e07caeb {
@@ -341,6 +342,55 @@
 		/* Package page sidebar text */
 		.c84e15be {
 			color: @subtext0;
+		}
+
+		/* Readme */
+		#readme {
+			a {
+				color: @red;
+				&.heading-link {
+					color: @text;
+					svg {
+						fill: @text;
+					}
+				}
+			}
+			p,
+			li {
+				color: @subtext0;
+			}
+			strong {
+				color: @text;
+			}
+			.highlight pre,
+			code {
+				background-color: lighten(@surface0, 5%);
+			}
+			h1,
+			h2 {
+				border-bottom-color: @surface1;
+			}
+			h4 {
+				border-bottom-color: @surface0;
+			}
+			blockquote {
+				background-color: lighten(@surface0, 2%);
+				border-left-color: @surface2;
+			}
+			table {
+				color: @text;
+				td,
+				th {
+					background-color: @base;
+					border-color: @surface0;
+				}
+			}
+		}
+
+		/* Keywords, share feedback link */
+		.a0dff0b1,
+		._9d38ab88 {
+			color: @text;
 		}
 	}
 

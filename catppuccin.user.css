@@ -348,11 +348,18 @@
 		#readme {
 			a {
 				color: @red;
-				&.heading-link {
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				color: @text;
+				a,
+				svg {
 					color: @text;
-					svg {
-						fill: @text;
-					}
+					fill: @text;
 				}
 			}
 			p,
@@ -365,6 +372,9 @@
 			.highlight pre,
 			code {
 				background-color: lighten(@surface0, 5%);
+			}
+			code {
+				color: @text;
 			}
 			h1,
 			h2 {

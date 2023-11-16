@@ -68,9 +68,10 @@
 			background-color: @base;
 		}
 
-		/* Inverse text */
-		.white {
-			color: @base;
+		/* Background layer background */
+		._7eb68a55,
+		.e9998f88 {
+			background-color: @mantle;
 		}
 
 		/* Primary text */
@@ -94,28 +95,41 @@
 			color: @overlay0;
 		}
 
-		/* Background layer background */
-		._7eb68a55,
-		.e9998f88 {
-			background-color: @mantle;
+		/* Inverse text */
+		.white {
+			color: @base;
 		}
 
 		/* Search box */
-		._2f299eeb {
-			background-color: @crust;
-		}
-		input._390acbc5::placeholder {
-			color: @overlay1;
-		}
-		.dde91b96 {
-			border-color: @crust;
+		form#search {
+			button[type="submit"] {
+				background-color: @subtext1;
+			}
+			& > div {
+				border-color: @crust;
 
-			&:focus-within {
-				border-color: @subtext1;
+				&:focus-within {
+					border-color: @subtext1;
+				}
+
+				& > div {
+					background-color: @crust;
+					span svg g[stroke="#777777"] {
+						stroke: @subtext0;
+					}
+					input[type="search"] {
+						color: @overlay1;
+						&::placeholder {
+							color: @overlay1;
+						}
+					}
+				}
 			}
 		}
-		._0da775bb {
-			background-color: @subtext1;
+
+		/* Search results */
+		#pkg-list-exact-match {
+			background-color: @mauve;
 		}
 
 		/* Profile */
@@ -129,12 +143,31 @@
 		._9e2bd439 a:focus {
 			background-color: @crust;
 		}
+		._59b94eb6 {
+			border-color: @surface0;
+		}
+		._59b94eb6::before {
+			border-bottom-color: @surface0;
+		}
+		._07ec5156 {
+			border-color: @surface0;
+			color: @red;
+			svg {
+				fill: @red;
+			}
+		}
+		.d70fa54a {
+			border-bottom-color: @surface1;
+		}
 
 		/* Dividers and box borders */
 		._5d3decdb,
 		.f85080bd,
 		.b--black-10 {
 			border-color: @surface0;
+			border-bottom-color: @surface0;
+		}
+		header {
 			border-bottom-color: @surface0;
 		}
 
@@ -362,6 +395,22 @@
 		.a0dff0b1,
 		._9d38ab88 {
 			color: @text;
+		}
+
+		li._8a646b6d:hover {
+			background-color: @crust;
+		}
+
+		/* Settings pages */
+		._7fb5e603 h1 {
+			color: @text;
+		}
+		._55741ad1 {
+			color: @green;
+			border-color: @green;
+		}
+		.e9998f88 {
+			box-shadow: none;
 		}
 	}
 

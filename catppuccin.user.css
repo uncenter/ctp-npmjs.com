@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name NPM Catppuccin
-@namespace github.com/uncenter/ctp-npmjs.com
+@name        NPM Catppuccin
+@namespace   github.com/uncenter/ctp-npmjs.com
 @homepageURL https://github.com/uncenter/ctp-npmjs.com
-@version 0.0.1
-@updateURL https://github.com/uncenter/ctp-npmjs.com/raw/main/catppuccin.user.css
+@version     0.0.1
+@updateURL   https://github.com/uncenter/ctp-npmjs.com/raw/main/catppuccin.user.css
 @description Soothing pastel theme for NPM
-@author uncenter
-@license MIT
+@author      uncenter
+@license     MIT
 
 @preprocessor less
 @var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
@@ -163,9 +163,14 @@
 			/* Profile */
 			nav > button[aria-label="Profile menu"] {
 				/* Profile dropdown arrow */
-				img[alt="avatar"] + div > svg {
-					fill: @text;
+				img[alt="avatar"] {
+					border-color: @text;
+
+					& + div > svg {
+						fill: @text;
+					}
 				}
+
 				/* Profile popup */
 				+ span > div {
 					border-color: @surface0;
@@ -224,6 +229,9 @@
 			a[href="https://github.com"] svg
 			{
 				fill: @text;
+			}
+			&::after {
+				background-image: linear-gradient(139deg, @peach, @maroon, @red, @pink);
 			}
 		}
 
@@ -318,7 +326,7 @@
 			fill: @text;
 		}
 
-		/* Provenance popup/box */
+		/* Package sidebar provenance popup */
 		button[aria-label="View more provenance details"] {
 			& + div > div > div {
 				background-color: @base;
@@ -351,10 +359,18 @@
 		.f97c6116 {
 			fill: @green;
 		}
+		/* Provenance section at bottom */
+		#provenance-details-header + div {
+			border-color: @surface0;
+		}
 
 		/* Package page sidebar text */
 		.c84e15be {
 			color: @subtext0;
+		}
+		/* Copy install command box */
+		.d767adf4 p {
+			border-color: @surface0;
 		}
 
 		/* Readme */

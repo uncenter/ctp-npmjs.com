@@ -456,10 +456,13 @@
 
 		/* Generic buttons/button links */
 		._24a1e9c7 {
+			background-image: none;
 			background-color: @surface0;
 			color: @text;
 			border: @surface1;
-			background-image: none;
+			&:hover {
+				background-color: @surface1;
+			}
 		}
 
 		/* Edit profile settings */
@@ -477,6 +480,36 @@
 		p:has(+ a[href^="/settings/"][href$="/delete-account"]) {
 			color: @text;
 		}
+
+		details ul[class*="Dropdown__DropdownMenu"] {
+			background-color: @base;
+			border-color: @surface0;
+			li a:hover {
+				background-color: @mantle !important;
+				color: @text !important;
+			}
+		}
+
+		/* Access tokens settings */
+		form[id="tokens"] {
+			table {
+				td {
+					span {
+						color: @subtext1;
+
+						&:hover {
+							color: @text;
+						}
+					}
+					code {
+						color: @subtext0;
+					}
+				}
+				& + div {
+					color: @text;
+				}
+			}
+		}
 	}
 
 	@media (prefers-color-scheme: light) {
@@ -487,6 +520,7 @@
 	@media (prefers-color-scheme: dark) {
 		:root {
 			#catppuccin(@darkFlavor, @accentColor);
+			color-scheme: dark;
 		}
 	}
 }

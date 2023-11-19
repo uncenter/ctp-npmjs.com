@@ -139,8 +139,7 @@
 						}
 
 						input[type="search"] {
-							color: @overlay1;
-
+							&,
 							&::placeholder {
 								color: @overlay1;
 							}
@@ -446,11 +445,37 @@
 				background-color: @green;
 			}
 		}
-		li._8a646b6d:hover {
-			background-color: @crust;
-		}
-		.e9998f88 {
+		/* Left panel */
+		aside.e9998f88 {
 			box-shadow: none;
+
+			ul.c63ae7fc li:hover {
+				background-color: @crust;
+			}
+		}
+
+		/* Generic buttons/button links */
+		._24a1e9c7 {
+			background-color: @surface0;
+			color: @text;
+			border: @surface1;
+			background-image: none;
+		}
+
+		/* Edit profile settings */
+		form[id="profile"] {
+			input[id="profile_fullname"] {
+				background-color: @surface0;
+				&:focus {
+					box-shadow: 0 0 0 2px @blue;
+				}
+			}
+		}
+		/* Email and password settings */
+		p:has(+ div > a[href^="/settings/"][href$="/email"] + a[href^="/settings/"][href$="/password"]),
+		/* Delete account */
+		p:has(+ a[href^="/settings/"][href$="/delete-account"]) {
+			color: @text;
 		}
 	}
 

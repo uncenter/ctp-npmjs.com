@@ -86,7 +86,8 @@
 		.black-80,
 		._0b9b6c57,
 		._1b8c0a9f,
-		p {
+		p,
+		a {
 			color: @text;
 		}
 
@@ -511,15 +512,15 @@
 			}
 		}
 
-		/* Edit profile settings */
-		form[id="profile"] {
-			input[id="profile_fullname"] {
-				background-color: @surface0;
-				&:focus {
-					box-shadow: 0 0 0 2px @blue;
-				}
+		/* Edit profile settings input, 2FA auth input  */
+		input[type="text"] {
+			background-color: @surface0;
+
+			&:focus {
+				box-shadow: 0 0 0 2px @blue;
 			}
 		}
+
 		/* Email and password settings */
 		p:has(+ div > a[href^="/settings/"][href$="/email"] + a[href^="/settings/"][href$="/password"]),
 		/* Delete account */
@@ -557,6 +558,40 @@
 				}
 			}
 		}
+
+		/* 2FA authentication page */
+		._75ce47e7 {
+			background-color: @base;
+
+			&::before {
+				background-image: linear-gradient(139deg, @peach, @maroon, @red, @pink);
+			}
+
+			/* Use password button */
+			._75dbe70f {
+				color: @text;
+			}
+		}
+		._320f7a67 {
+			background-color: @base;
+
+			&::before {
+				background-image: linear-gradient(139deg, @peach, @maroon, @red, @pink);
+			}
+
+			section {
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+			}
+
+			div[role="radiogroup"] {
+				color: @text;
+				background-color: @surface0;
+			}
+
+			[id="gat-banner"] span {
+				color: @yellow;
+			}
+		}
 	}
 
 	@media (prefers-color-scheme: light) {
@@ -570,3 +605,8 @@
 		}
 	}
 }
+
+/* Todos:
+- Cleanup danger/success duplicate styling, button colors in dark flavors
+- Organize rules top-down or by page
+*/

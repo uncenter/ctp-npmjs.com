@@ -14,7 +14,7 @@
 @var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire*", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
 
-@-moz-document domain("npmjs.com") {
+@-moz-document domain("www.npmjs.com") {
 	/* prettier-ignore */
 	@catppuccin: {
       @latte:     { @rosewater: #dc8a78; @flamingo: #dd7878; @pink: #ea76cb; @mauve: #8839ef; @red: #d20f39; @maroon: #e64553; @peach: #fe640b; @yellow: #df8e1d; @green: #40a02b; @teal: #179299; @sky: #04a5e5; @sapphire: #209fb5; @blue: #1e66f5; @lavender: #7287fd; @text: #4c4f69; @subtext1: #5c5f77; @subtext0: #6c6f85; @overlay2: #7c7f93; @overlay1: #8c8fa1; @overlay0: #9ca0b0; @surface2: #acb0be; @surface1: #bcc0cc; @surface0: #ccd0da; @base: #eff1f5; @mantle: #e6e9ef; @crust: #dce0e8; };
@@ -374,6 +374,7 @@
 
 		/* Readme */
 		#readme {
+			color: @text;
 			a {
 				color: @red;
 			}
@@ -461,8 +462,13 @@
 			color: @text;
 			border: @surface1;
 
-			&:hover {
+			&:not([disabled]):hover {
 				background-color: @surface1;
+			}
+
+			&[disabled] {
+				background-color: @mantle;
+				color: @subtext0;
 			}
 
 			/* Danger */
@@ -507,7 +513,8 @@
 		}
 
 		/* Edit profile settings input, 2FA auth input  */
-		input[type="text"] {
+		input[type="text"],
+		textarea {
 			background-color: @surface0;
 
 			&:focus {
@@ -585,6 +592,12 @@
 			[id="gat-banner"] span {
 				color: @yellow;
 			}
+		}
+
+		select {
+			background-color: @surface0;
+			border-color: @surface2;
+			color: @text;
 		}
 	}
 

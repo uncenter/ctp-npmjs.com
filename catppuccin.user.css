@@ -61,6 +61,10 @@
 			background-color: @base !important;
 		}
 
+		& when not (@lookup = latte) {
+			color-scheme: dark;
+		}
+
 		/* Primary background */
 		.bg-white,
 		._4ea0e50d,
@@ -81,7 +85,8 @@
 		.black-90,
 		.black-80,
 		._0b9b6c57,
-		._1b8c0a9f {
+		._1b8c0a9f,
+		p {
 			color: @text;
 		}
 
@@ -460,8 +465,49 @@
 			background-color: @surface0;
 			color: @text;
 			border: @surface1;
+
 			&:hover {
 				background-color: @surface1;
+			}
+
+			/* Danger */
+			&._4a3f8f21 {
+				& when (@lookup = latte) {
+					background-color: lighten(@red, 30%);
+
+					&:hover {
+						background-color: lighten(@red, 25%);
+					}
+				}
+
+				& when not (@lookup = latte) {
+					background-color: @red;
+					color: @surface1;
+
+					&:hover {
+						background-color: lighten(@red, 5%);
+					}
+				}
+			}
+
+			/* Success */
+			&.c37751f6 {
+				& when (@lookup = latte) {
+					background-color: lighten(@green, 30%);
+
+					&:hover {
+						background-color: lighten(@green, 25%);
+					}
+				}
+
+				& when not (@lookup = latte) {
+					background-color: @green;
+					color: @surface1;
+
+					&:hover {
+						background-color: lighten(@green, 5%);
+					}
+				}
 			}
 		}
 
@@ -484,6 +530,7 @@
 		details ul[class*="Dropdown__DropdownMenu"] {
 			background-color: @base;
 			border-color: @surface0;
+
 			li a:hover {
 				background-color: @mantle !important;
 				color: @text !important;
@@ -520,7 +567,6 @@
 	@media (prefers-color-scheme: dark) {
 		:root {
 			#catppuccin(@darkFlavor, @accentColor);
-			color-scheme: dark;
 		}
 	}
 }

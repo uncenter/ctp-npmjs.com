@@ -24,10 +24,6 @@
       };
     }
 
-	/*  Userstyle as Mixin
-     *  This takes the following Parameters:
-     *  @lookup – which is the desired Flavor
-     *  @accent – which is the desired Accent Color */
 	#catppuccin(@lookup, @accent) {
 		@rosewater: @catppuccin[@@lookup][@rosewater];
 		@flamingo: @catppuccin[@@lookup][@flamingo];
@@ -67,8 +63,7 @@
 
 		/* Primary background */
 		.bg-white,
-		._4ea0e50d,
-		.cd2827bb {
+		._4ea0e50d {
 			background-color: @base;
 		}
 
@@ -80,7 +75,6 @@
 
 		/* Primary text */
 		._99e3854f,
-		.c6c55db4,
 		.black,
 		.black-90,
 		.black-80,

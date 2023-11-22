@@ -418,6 +418,7 @@
 			}
 			table {
 				color: @text;
+				border-bottom: none;
 				td,
 				th {
 					background-color: @base;

@@ -600,6 +600,28 @@
 			border-color: @surface2;
 			color: @text;
 		}
+
+		[aria-labelledby="search_ranking_radiogroup_label"] {
+			label {
+				color: @subtext0;
+
+				&[for="search_ranking_optimal"] {
+					border-bottom-color: @surface1;
+				}
+
+				&[for="search_ranking_popularity"] {
+					border-bottom-color: @sky;
+				}
+
+				&[for="search_ranking_quality"] {
+					border-bottom-color: @mauve;
+				}
+
+				&[for="search_ranking_maintenance"] {
+					border-bottom-color: @red;
+				}
+			}
+		}
 	}
 
 	@media (prefers-color-scheme: light) {
@@ -617,4 +639,11 @@
 /* Todos:
 - Cleanup danger/success duplicate styling, button colors in dark flavors
 - Organize rules top-down or by page
+- Search results
+- Syntax highlighting in README
+- Code view, syntax highlighting there
+- https://www.npmjs.com/org/create
+- https://www.npmjs.com/products/pro
+- https://www.npmjs.com/products/teams
+- https://www.npmjs.com/products
 */

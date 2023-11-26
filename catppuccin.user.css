@@ -100,6 +100,12 @@
 			color: @base;
 		}
 
+		/* Top loading bar */
+		div.fixed.top-0.left-0.z-999 {
+			background-color: @red;
+		}
+
+		/* Header */
 		header {
 			border-bottom-color: @surface0;
 
@@ -134,6 +140,7 @@
 					& > div {
 						background-color: @crust;
 
+						/* Magnifying glass icon */
 						span svg g[stroke="#777777"] {
 							stroke: @subtext0;
 						}
@@ -150,6 +157,7 @@
 						}
 					}
 
+					/* Floating live results */
 					ul[aria-label="Search results"] {
 						li {
 							border-bottom-color: @surface0;
@@ -212,26 +220,6 @@
 		.b--black-10 {
 			border-color: @surface0;
 			border-bottom-color: @surface0;
-		}
-
-		footer {
-			a[href="https://github.com/npm"] svg
-			{
-				& > polygon {
-					fill: @base;
-				}
-
-				& > rect {
-					fill: @text;
-				}
-			}
-			a[href="https://github.com"] svg
-			{
-				fill: @text;
-			}
-			&::after {
-				background-image: linear-gradient(139deg, @peach, @maroon, @red, @pink);
-			}
 		}
 
 		/* Discover packages section */
@@ -513,7 +501,7 @@
 			}
 		}
 
-		/* Edit profile settings input, 2FA auth input  */
+		/* Input elements (edit profile settings input, 2FA auth input, etc)  */
 		input[type="text"],
 		textarea {
 			background-color: @surface0;
@@ -522,14 +510,6 @@
 				box-shadow: 0 0 0 2px @blue;
 			}
 		}
-
-		/* Email and password settings */
-		p:has(+ div > a[href^="/settings/"][href$="/email"] + a[href^="/settings/"][href$="/password"]),
-		/* Delete account */
-		p:has(+ a[href^="/settings/"][href$="/delete-account"]) {
-			color: @text;
-		}
-
 		details ul[class*="Dropdown__DropdownMenu"] {
 			background-color: @base;
 			border-color: @surface0;
@@ -538,6 +518,18 @@
 				background-color: @mantle !important;
 				color: @text !important;
 			}
+		}
+		select {
+			background-color: @surface0;
+			border-color: @surface2;
+			color: @text;
+		}
+
+		/* Email and password settings */
+		p:has(+ div > a[href^="/settings/"][href$="/email"] + a[href^="/settings/"][href$="/password"]),
+		/* Delete account */
+		p:has(+ a[href^="/settings/"][href$="/delete-account"]) {
+			color: @text;
 		}
 
 		/* Access tokens settings */
@@ -595,12 +587,6 @@
 			}
 		}
 
-		select {
-			background-color: @surface0;
-			border-color: @surface2;
-			color: @text;
-		}
-
 		/* Search results */
 		[aria-labelledby="search_ranking_radiogroup_label"] {
 			label {
@@ -654,6 +640,27 @@
 				background-color: @crust;
 			}
 		}
+
+		/* Footer */
+		footer {
+			a[href="https://github.com/npm"] svg
+			{
+				& > polygon {
+					fill: @base;
+				}
+
+				& > rect {
+					fill: @text;
+				}
+			}
+			a[href="https://github.com"] svg
+			{
+				fill: @text;
+			}
+			&::after {
+				background-image: linear-gradient(139deg, @peach, @maroon, @red, @pink);
+			}
+		}
 	}
 
 	@media (prefers-color-scheme: light) {
@@ -670,10 +677,9 @@
 
 /* Todos:
 - Cleanup danger/success duplicate styling, button colors in dark flavors
-- Organize rules top-down or by page
 - Search results pqm charts
 - Syntax highlighting in README
-- Code view, syntax highlighting there
+- Code view, code view syntax highlighting
 - https://www.npmjs.com/org/create
 - https://www.npmjs.com/products/pro
 - https://www.npmjs.com/products/teams

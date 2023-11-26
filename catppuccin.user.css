@@ -53,6 +53,8 @@
 		@crust: @catppuccin[@@lookup][@crust];
 		@accent-color: @catppuccin[@@lookup][@@accent];
 
+		@npmGradient: linear-gradient(139deg, @peach, @maroon, @red, @pink);
+
 		& {
 			background-color: @base !important;
 		}
@@ -111,7 +113,7 @@
 
 			/* Top bar gradient */
 			.e7070742 {
-				border-image: linear-gradient(139deg, @peach, @maroon, @red, @pink) 3;
+				border-image: @npmGradient 3;
 			}
 
 			/* Heart icon */
@@ -558,7 +560,7 @@
 			background-color: @base;
 
 			&::before {
-				background-image: linear-gradient(139deg, @peach, @maroon, @red, @pink);
+				background-image: @npmGradient;
 			}
 
 			/* Use password button */
@@ -570,7 +572,7 @@
 			background-color: @base;
 
 			&::before {
-				background-image: linear-gradient(139deg, @peach, @maroon, @red, @pink);
+				background-image: @npmGradient;
 			}
 
 			section {
@@ -658,7 +660,7 @@
 				fill: @text;
 			}
 			&::after {
-				background-image: linear-gradient(139deg, @peach, @maroon, @red, @pink);
+				background-image: @npmGradient;
 			}
 		}
 	}

@@ -160,11 +160,9 @@
 					}
 
 					/* Floating live results */
-					ul[aria-label="Search results"] {
-						li {
-							border-bottom-color: @surface0;
-							color: @text;
-						}
+					ul li {
+						border-bottom-color: @surface0;
+						color: @text;
 					}
 				}
 			}

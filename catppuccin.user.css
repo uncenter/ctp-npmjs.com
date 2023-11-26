@@ -601,6 +601,7 @@
 			color: @text;
 		}
 
+		/* Search results */
 		[aria-labelledby="search_ranking_radiogroup_label"] {
 			label {
 				color: @subtext0;
@@ -622,6 +623,37 @@
 				}
 			}
 		}
+		.a9b7335e {
+			background-color: @mantle;
+
+			nav[aria-label="Pagination Navigation"] {
+				div > a {
+					background-color: @base;
+					border-color: @surface0;
+
+					&:hover {
+						background-color: @mantle;
+					}
+				}
+			}
+		}
+		#pkg-list-exact-match {
+			color: @base;
+			& when (@lookup = latte) {
+				background-color: lighten(@mauve, 20%);
+			}
+			& when not (@lookup = latte) {
+				background-color: @mauve;
+			}
+		}
+		div:has([aria-labelledby="search_ranking_radiogroup_label"])
+			a[href^="/search?q=keywords"] {
+			background-color: @mantle;
+
+			&:hover {
+				background-color: @crust;
+			}
+		}
 	}
 
 	@media (prefers-color-scheme: light) {
@@ -639,7 +671,7 @@
 /* Todos:
 - Cleanup danger/success duplicate styling, button colors in dark flavors
 - Organize rules top-down or by page
-- Search results
+- Search results pqm charts
 - Syntax highlighting in README
 - Code view, syntax highlighting there
 - https://www.npmjs.com/org/create

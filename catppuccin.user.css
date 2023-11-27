@@ -360,6 +360,53 @@
 			border-color: @surface0;
 		}
 
+		/* Code view tab */
+		._5ae7dfec {
+			border-color: @surface0;
+
+			> div:has(h2) {
+				border-bottom-color: @surface0;
+			}
+
+			._450b46e9 {
+				@svg: escape(
+					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" fill="@{text}"><path d="M50.4 74.7L23.7 50l26.7-24.7-5.4-5.9L11.9 50 45 80.6l5.4-5.9z"/><path d="M82.6 19.4L49.6 50l33 30.6 5.5-5.9L61.4 50l26.7-24.7-5.5-5.9z"/></svg>'
+				);
+				background-image: url("data:image/svg+xml,@{svg}");
+			}
+
+			ul li {
+				border-bottom-color: @surface0;
+
+				&:hover {
+					background-color: @surface0;
+				}
+
+				img {
+					@folder: escape(
+						'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 122.5" fill="@{surface0}"><path d="M37.9 18.4H13v61.2h72V25H49zM79 73.6H19V44h60zM79 38H19V24.4h17.2L47.3 31H79z"/></svg>'
+					);
+					@file: escape(
+						'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" fill="@{surface0}"><path d="M82.2 10.7H38.7l-20.9 19v59.6h64.4zm-44.6 6.4v11.2H25.3zm40.6 68.2H21.8v-53h19.8V14.7h36.6z"/><path d="M34.3 44.7h31.4v4H34.3zm0 13.2h31.4v4H34.3zm0 13.1h31.4v4H34.3z"/></svg>'
+					);
+					&._1528cda6 {
+						background-image: url("data:image/svg+xml,@{folder}");
+					}
+					&._7ec1ed32 {
+						background-image: url("data:image/svg+xml,@{file}");
+					}
+				}
+			}
+
+			button {
+				color: @text;
+			}
+
+			div:has(+ pre) {
+				background-color: @mantle;
+			}
+		}
+
 		/* Readme */
 		#readme {
 			color: @text;
@@ -416,7 +463,17 @@
 		}
 
 		/* Keywords, share feedback link */
-		#user-content-keywords,
+		#user-content-keywords {
+			color: @text;
+
+			& + ul a {
+				color: @red;
+
+				&:hover {
+					color: @text;
+				}
+			}
+		}
 		#user-content-provenance a[href=" https://github.com/npm/feedback"]
 		{
 			color: @text;
@@ -589,6 +646,10 @@
 
 		/* Search results */
 		[aria-labelledby="search_ranking_radiogroup_label"] {
+			& > div:focus-within {
+				outline: none;
+			}
+
 			label {
 				color: @subtext0;
 
@@ -632,12 +693,16 @@
 				background-color: @mauve;
 			}
 		}
-		div:has([aria-labelledby="search_ranking_radiogroup_label"])
+		div:has(#search_ranking_radiogroup_label) {
+			a[aria-label^="publisher"]:hover {
+				color: @red;
+			}
 			a[href^="/search?q=keywords"] {
-			background-color: @mantle;
+				background-color: @mantle;
 
-			&:hover {
-				background-color: @crust;
+				&:hover {
+					background-color: @crust;
+				}
 			}
 		}
 		/* PQM text */
@@ -648,11 +713,9 @@
 		._464c07bf {
 			background-color: @sky;
 		}
-
 		._625ca439 {
 			background-color: @mauve;
 		}
-
 		._9a8a65f4 {
 			background-color: @red;
 		}
@@ -694,7 +757,7 @@
 /* Todos:
 - Cleanup danger/success duplicate styling, button colors in dark flavors
 - Syntax highlighting in README
-- Code view, code view syntax highlighting
+- Code view, code view syntax highlighting - WIP: need to fix icons being overlayed
 - https://www.npmjs.com/org/create
 - https://www.npmjs.com/products/pro
 - https://www.npmjs.com/products/teams

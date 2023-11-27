@@ -640,6 +640,22 @@
 				background-color: @crust;
 			}
 		}
+		/* PQM text */
+		._89d0b3e5 {
+			color: @text;
+		}
+		/* PQM bars */
+		._464c07bf {
+			background-color: @sky;
+		}
+
+		._625ca439 {
+			background-color: @mauve;
+		}
+
+		._9a8a65f4 {
+			background-color: @red;
+		}
 
 		/* Footer */
 		footer {
@@ -677,7 +693,6 @@
 
 /* Todos:
 - Cleanup danger/success duplicate styling, button colors in dark flavors
-- Search results pqm charts
 - Syntax highlighting in README
 - Code view, code view syntax highlighting
 - https://www.npmjs.com/org/create

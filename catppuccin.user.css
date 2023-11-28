@@ -435,9 +435,7 @@
 			}
 			pre,
 			code {
-				background-color: lighten(@surface0, 5%);
-			}
-			code {
+				background-color: darken(@base, 2.5%);
 				color: @text;
 			}
 			h1,
@@ -739,6 +737,231 @@
 			&::after {
 				background-image: @npmGradient;
 			}
+		}
+
+		& when (@lookup = latte) {
+			--color-prettylights-syntax-comment: @overlay2;
+			--color-prettylights-syntax-constant: @blue;
+			--color-prettylights-syntax-entity: @mauve;
+			--color-prettylights-syntax-storage-modifier-import: @text;
+			--color-prettylights-syntax-entity-tag: @green;
+			--color-prettylights-syntax-keyword: @red;
+			--color-prettylights-syntax-string: @text;
+			--color-prettylights-syntax-variable: @maroon;
+			--color-prettylights-syntax-brackethighlighter-unmatched: @red;
+			--color-prettylights-syntax-invalid-illegal-text: @base;
+			--color-prettylights-syntax-invalid-illegal-bg: @red;
+			--color-prettylights-syntax-carriage-return-text: @base;
+			--color-prettylights-syntax-carriage-return-bg: @red;
+			--color-prettylights-syntax-string-regexp: @green;
+			--color-prettylights-syntax-markup-list: #3b2300;
+			--color-prettylights-syntax-markup-heading: @blue;
+			--color-prettylights-syntax-markup-italic: @text;
+			--color-prettylights-syntax-markup-bold: @text;
+			--color-prettylights-syntax-markup-deleted-text: @red;
+			--color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+			--color-prettylights-syntax-markup-inserted-text: @green;
+			--color-prettylights-syntax-markup-inserted-bg: lighten(@green, 20%);
+			--color-prettylights-syntax-markup-changed-text: lighten(@maroon, 20%);
+			--color-prettylights-syntax-markup-changed-bg: @rosewater;
+			--color-prettylights-syntax-markup-ignored-text: @surface0;
+			--color-prettylights-syntax-markup-ignored-bg: @blue;
+			--color-prettylights-syntax-meta-diff-range: @mauve;
+			--color-prettylights-syntax-brackethighlighter-angle: @subtext1;
+			--color-prettylights-syntax-sublimelinter-gutter-mark: @overlay1;
+			--color-prettylights-syntax-constant-other-reference-link: @lavender;
+			--color-prettylights-syntax-comment: @overlay2;
+			--color-prettylights-syntax-constant: @blue;
+			--color-prettylights-syntax-entity: @mauve;
+			--color-prettylights-syntax-storage-modifier-import: @text;
+			--color-prettylights-syntax-entity-tag: @green;
+			--color-prettylights-syntax-keyword: @red;
+			--color-prettylights-syntax-string: @text;
+			--color-prettylights-syntax-variable: @maroon;
+			--color-prettylights-syntax-brackethighlighter-unmatched: @red;
+			--color-prettylights-syntax-invalid-illegal-text: @base;
+			--color-prettylights-syntax-invalid-illegal-bg: @red;
+			--color-prettylights-syntax-carriage-return-text: @base;
+			--color-prettylights-syntax-carriage-return-bg: @red;
+			--color-prettylights-syntax-string-regexp: @green;
+			--color-prettylights-syntax-markup-list: #3b2300;
+			--color-prettylights-syntax-markup-heading: @blue;
+			--color-prettylights-syntax-markup-italic: @text;
+			--color-prettylights-syntax-markup-bold: @text;
+			--color-prettylights-syntax-markup-deleted-text: @red;
+			--color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+			--color-prettylights-syntax-markup-inserted-text: @green;
+			--color-prettylights-syntax-markup-inserted-bg: lighten(@green, 20%);
+			--color-prettylights-syntax-markup-changed-text: @maroon;
+			--color-prettylights-syntax-markup-changed-bg: @rosewater;
+			--color-prettylights-syntax-markup-ignored-text: @surface0;
+			--color-prettylights-syntax-markup-ignored-bg: @blue;
+			--color-prettylights-syntax-meta-diff-range: @mauve;
+			--color-prettylights-syntax-brackethighlighter-angle: @subtext1;
+			--color-prettylights-syntax-sublimelinter-gutter-mark: @overlay1;
+			--color-prettylights-syntax-constant-other-reference-link: @lavender;
+		}
+
+		& when not (@lookup = latte) {
+			--color-prettylights-syntax-comment: @overlay1;
+			--color-prettylights-syntax-constant: @sapphire;
+			--color-prettylights-syntax-entity: @mauve;
+			--color-prettylights-syntax-storage-modifier-import: @text;
+			--color-prettylights-syntax-entity-tag: saturate(@green, 20%);
+			--color-prettylights-syntax-keyword: saturate(@red, 10%);
+			--color-prettylights-syntax-string: saturate(@sapphire, 5%);
+			--color-prettylights-syntax-variable: saturate(@peach, 10%);
+			--color-prettylights-syntax-brackethighlighter-unmatched: saturate(
+				@red,
+				20%
+			);
+			--color-prettylights-syntax-invalid-illegal-text: @text;
+			--color-prettylights-syntax-invalid-illegal-bg: darken(@red, 20%);
+			--color-prettylights-syntax-carriage-return-text: @text;
+			--color-prettylights-syntax-carriage-return-bg: saturate(@red, 20%);
+			--color-prettylights-syntax-string-regexp: saturate(@green, 20%);
+			--color-prettylights-syntax-markup-list: saturate(@yellow, 5%);
+			--color-prettylights-syntax-markup-heading: darken(@blue, 20%);
+			--color-prettylights-syntax-markup-italic: @text;
+			--color-prettylights-syntax-markup-bold: @text;
+			--color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+			--color-prettylights-syntax-markup-deleted-bg: darken(@red, 30%);
+			--color-prettylights-syntax-markup-inserted-text: saturate(@green, 20%);
+			--color-prettylights-syntax-markup-inserted-bg: darken(@green, 20%);
+			--color-prettylights-syntax-markup-changed-text: saturate(
+				@rosewater,
+				10%
+			);
+			--color-prettylights-syntax-markup-changed-bg: #5a1e02;
+			--color-prettylights-syntax-markup-ignored-text: @text;
+			--color-prettylights-syntax-markup-ignored-bg: darken(@blue, 20%);
+			--color-prettylights-syntax-meta-diff-range: @mauve;
+			--color-prettylights-syntax-brackethighlighter-angle: @overlay1;
+			--color-prettylights-syntax-sublimelinter-gutter-mark: @surface0;
+			--color-prettylights-syntax-constant-other-reference-link: saturate(
+				@sapphire,
+				5%
+			);
+		}
+
+		.pl-c {
+			color: var(--color-prettylights-syntax-comment);
+		}
+
+		.pl-c1,
+		.pl-s .pl-v {
+			color: var(--color-prettylights-syntax-constant);
+		}
+
+		.pl-e,
+		.pl-en {
+			color: var(--color-prettylights-syntax-entity);
+		}
+
+		.pl-smi,
+		.pl-s .pl-s1 {
+			color: var(--color-prettylights-syntax-storage-modifier-import);
+		}
+
+		.pl-ent {
+			color: var(--color-prettylights-syntax-entity-tag);
+		}
+
+		.pl-k {
+			color: var(--color-prettylights-syntax-keyword);
+		}
+
+		.pl-s,
+		.pl-pds,
+		.pl-s .pl-pse .pl-s1,
+		.pl-sr,
+		.pl-sr .pl-cce,
+		.pl-sr .pl-sre,
+		.pl-sr .pl-sra {
+			color: var(--color-prettylights-syntax-string);
+		}
+
+		.pl-v,
+		.pl-smw {
+			color: var(--color-prettylights-syntax-variable);
+		}
+
+		.pl-bu {
+			color: var(--color-prettylights-syntax-brackethighlighter-unmatched);
+		}
+
+		.pl-ii {
+			color: var(--color-prettylights-syntax-invalid-illegal-text);
+			background-color: var(--color-prettylights-syntax-invalid-illegal-bg);
+		}
+
+		.pl-c2 {
+			color: var(--color-prettylights-syntax-carriage-return-text);
+			background-color: var(--color-prettylights-syntax-carriage-return-bg);
+		}
+
+		.pl-sr .pl-cce {
+			font-weight: bold;
+			color: var(--color-prettylights-syntax-string-regexp);
+		}
+
+		.pl-ml {
+			color: var(--color-prettylights-syntax-markup-list);
+		}
+
+		.pl-mh,
+		.pl-mh .pl-en,
+		.pl-ms {
+			font-weight: bold;
+			color: var(--color-prettylights-syntax-markup-heading);
+		}
+
+		.pl-mi {
+			font-style: italic;
+			color: var(--color-prettylights-syntax-markup-italic);
+		}
+
+		.pl-mb {
+			font-weight: bold;
+			color: var(--color-prettylights-syntax-markup-bold);
+		}
+
+		.pl-md {
+			color: var(--color-prettylights-syntax-markup-deleted-text);
+			background-color: var(--color-prettylights-syntax-markup-deleted-bg);
+		}
+
+		.pl-mi1 {
+			color: var(--color-prettylights-syntax-markup-inserted-text);
+			background-color: var(--color-prettylights-syntax-markup-inserted-bg);
+		}
+
+		.pl-mc {
+			color: var(--color-prettylights-syntax-markup-changed-text);
+			background-color: var(--color-prettylights-syntax-markup-changed-bg);
+		}
+
+		.pl-mi2 {
+			color: var(--color-prettylights-syntax-markup-ignored-text);
+			background-color: var(--color-prettylights-syntax-markup-ignored-bg);
+		}
+
+		.pl-mdr {
+			font-weight: bold;
+			color: var(--color-prettylights-syntax-meta-diff-range);
+		}
+
+		.pl-ba {
+			color: var(--color-prettylights-syntax-brackethighlighter-angle);
+		}
+
+		.pl-sg {
+			color: var(--color-prettylights-syntax-sublimelinter-gutter-mark);
+		}
+
+		.pl-corl {
+			text-decoration: underline;
+			color: var(--color-prettylights-syntax-constant-other-reference-link);
 		}
 	}
 

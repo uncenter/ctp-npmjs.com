@@ -308,9 +308,22 @@
 		/* Package page sidebar icons */
 		._5cfc0900 svg,
 		.b5be2af6 svg,
-		.fbd04dd1 svg,
+		button[aria-label="Copy install command line"] svg,
 		[aria-labelledby="repository repository-link"] svg g {
 			fill: @text;
+		}
+		/* Copy install command box */
+		p:has(button[aria-label="Copy install command line"]) {
+			border-color: @surface0;
+		}
+		/* Weekly downloads chart */
+		div:has(> svg > [class^="sparkline--"]) {
+			border-bottom-color: fade(@accent-color, 20%);
+
+			svg {
+				stroke: @accent-color;
+				fill: fade(@accent-color, 20%);
+			}
 		}
 
 		/* Package sidebar provenance popup */
@@ -354,10 +367,6 @@
 		/* Package page sidebar text */
 		.c84e15be {
 			color: @subtext0;
-		}
-		/* Copy install command box */
-		.d767adf4 p {
-			border-color: @surface0;
 		}
 
 		/* File explorer tab */
@@ -983,7 +992,6 @@
 - File explorer syntax highlighting - WIP: need to fix icons being overlayed
 - Install command copy icon hover state
 - Copy clipboard banner
-- Package downloads chart colors
 - Package tabs, profile tabs - hover state
 - https://www.npmjs.com/org/create
 - https://www.npmjs.com/products/pro

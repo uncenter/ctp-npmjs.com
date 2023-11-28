@@ -360,11 +360,12 @@
 			border-color: @surface0;
 		}
 
-		/* Code view tab */
-		._5ae7dfec {
+		/* File explorer tab */
+		#tabpanel-explore > div > div {
 			border-color: @surface0;
 
-			> div:has(h2) {
+			> div:has(h2),
+			div:has(+ pre) {
 				border-bottom-color: @surface0;
 			}
 
@@ -979,8 +980,11 @@
 
 /* Todos:
 - Cleanup danger/success duplicate styling, button colors in dark flavors
-- Syntax highlighting in README
-- Code view, code view syntax highlighting - WIP: need to fix icons being overlayed
+- File explorer syntax highlighting - WIP: need to fix icons being overlayed
+- Install command copy icon hover state
+- Copy clipboard banner
+- Package downloads chart colors
+- Package tabs, profile tabs - hover state
 - https://www.npmjs.com/org/create
 - https://www.npmjs.com/products/pro
 - https://www.npmjs.com/products/teams

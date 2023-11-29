@@ -682,17 +682,17 @@
 				}
 			}
 		}
+		/* Search results header, results count, pagination buttons */
 		.a9b7335e {
 			background-color: @mantle;
+		}
+		nav[aria-label="Pagination Navigation"] {
+			div > a {
+				background-color: @base;
+				border-color: @surface0;
 
-			nav[aria-label="Pagination Navigation"] {
-				div > a {
-					background-color: @base;
-					border-color: @surface0;
-
-					&:hover {
-						background-color: @mantle;
-					}
+				&:hover {
+					background-color: @mantle;
 				}
 			}
 		}

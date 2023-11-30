@@ -404,6 +404,12 @@
 			color: @subtext0;
 		}
 
+		/* Tab headings */
+
+		[id^="tabpanel-"] h2 {
+			color: @text;
+		}
+
 		/* File explorer tab */
 		#tabpanel-explore > div > div {
 			border-color: @surface0;
@@ -456,8 +462,15 @@
 			}
 		}
 
+		/* Versions tab */
+		#tabpanel-versions {
+			ul li[class] div {
+				border-bottom-color: @surface0;
+			}
+		}
+
 		/* Readme tab */
-		#readme {
+		#tabpanel-readme #readme {
 			color: @text;
 			a {
 				color: @red;

@@ -259,19 +259,27 @@
 			color: @green;
 		}
 
-		/* Package tabs */
+		/* Package (and profile) tabs */
 		ul[aria-owns*="package-tab-"] {
 			li {
-				&:has([id="package-tab-readme"]) {
+				&:has(#package-tab-readme) {
 					border-color: @yellow;
+
+					&:hover {
+						background-color: fade(@yellow, 20%);
+					}
 
 					a {
 						color: @yellow;
 					}
 				}
-				&:has([id="package-tab-code"]),
-				&:has([id="package-tab-admin"]) {
+				&:has(#package-tab-code),
+				&:has(#package-tab-admin) {
 					border-color: @red;
+
+					&:hover {
+						background-color: fade(@red, 20%);
+					}
 
 					a {
 						color: @red;
@@ -281,25 +289,49 @@
 						}
 					}
 				}
-				&:has([id="package-tab-dependents"]) {
+				&:has(#package-tab-dependents),
+				&:has(#package-tab-packages) {
 					border-color: @mauve;
+
+					&:hover {
+						background-color: fade(@mauve, 20%);
+					}
 
 					a {
 						color: @mauve;
 					}
 				}
-				&:has([id="package-tab-dependencies"]) {
+				&:has(#package-tab-dependencies) {
 					border-color: @pink;
+
+					&:hover {
+						background-color: fade(@pink, 20%);
+					}
 
 					a {
 						color: @pink;
 					}
 				}
-				&:has([id="package-tab-versions"]) {
+				&:has(#package-tab-versions) {
 					border-color: @sapphire;
+
+					&:hover {
+						background-color: fade(@sapphire, 20%);
+					}
 
 					a {
 						color: @sapphire;
+					}
+				}
+				&:has(#package-tab-orgs) {
+					border-color: @green;
+
+					&:hover {
+						background-color: fade(@green, 20%);
+					}
+
+					a {
+						color: @green;
 					}
 				}
 			}
@@ -602,7 +634,7 @@
 		}
 
 		/* Access tokens settings */
-		form[id="tokens"] {
+		form#tokens {
 			table {
 				td {
 					span {
@@ -651,7 +683,7 @@
 				background-color: @surface0;
 			}
 
-			[id="gat-banner"] span {
+			#gat-banner span {
 				color: @yellow;
 			}
 		}
@@ -776,7 +808,6 @@
 - Install command copy icon hover state
 - Copy clipboard banner
 - PrettyLights syntax highlighting
-- Package tabs, profile tabs - hover state
 - https://www.npmjs.com/org/create
 - https://www.npmjs.com/products/pro
 - https://www.npmjs.com/products/teams

@@ -101,9 +101,22 @@
 			color: @base;
 		}
 
+		/* Border colors */
+		.b--black-10,
+		.b--black-20 {
+			border-color: @surface0;
+		}
+
+		/* --- ARBITRARY --- */
+
 		/* Top loading bar */
 		div.fixed.top-0.left-0.z-999 {
 			background-color: @red;
+		}
+
+		/* Magnifying glass icon (search box, discover packages) */
+		svg g[stroke="#777777"] {
+			stroke: @subtext0;
 		}
 
 		/* --- HEADER --- */
@@ -140,11 +153,6 @@
 
 					& > div {
 						background-color: @crust;
-
-						/* Magnifying glass icon */
-						span svg g[stroke="#777777"] {
-							stroke: @subtext0;
-						}
 
 						input[type="search"] {
 							&,
@@ -214,14 +222,14 @@
 			}
 		}
 
-		/* Dividers and box borders */
-		.f85080bd, /* Popular libraries section */
-		.b--black-10 {
-			border-color: @surface0;
-			border-bottom-color: @surface0;
-		}
-
 		/* --- HOME PAGE --- */
+
+		/* Popular libraries section */
+		ul[aria-labelledby="popular-libraries-header"] {
+			li a {
+				border-bottom-color: @surface0;
+			}
+		}
 
 		/* Discover packages section */
 		ul[aria-labelledby="discover-packages-header"] {
@@ -469,6 +477,18 @@
 			}
 		}
 
+		/* Dependencies/dependents tab */
+		#tabpanel-dependencies,
+		#tabpanel-dependents {
+			ul a {
+				color: @red;
+
+				&:hover {
+					color: @text;
+				}
+			}
+		}
+
 		/* Readme tab */
 		#tabpanel-readme #readme {
 			color: @text;
@@ -522,7 +542,7 @@
 			}
 		}
 
-		/* Keywords, share feedback link */
+		/* Keyword links */
 		#user-content-keywords {
 			color: @text;
 
@@ -534,6 +554,7 @@
 				}
 			}
 		}
+		/* Share provenance feedback link */
 		#user-content-provenance a[href=" https://github.com/npm/feedback"]
 		{
 			color: @text;

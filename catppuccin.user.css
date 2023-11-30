@@ -706,9 +706,6 @@
 			}
 		}
 		div:has(#search_ranking_radiogroup_label) {
-			a[aria-label^="publisher"]:hover {
-				color: @red;
-			}
 			a[href^="/search?q=keywords"] {
 				background-color: @mantle;
 
@@ -716,6 +713,10 @@
 					background-color: @crust;
 				}
 			}
+		}
+		/* Username links */
+		a[aria-label^="publisher"]:hover {
+			color: @red;
 		}
 		/* PQM text */
 		._89d0b3e5 {

@@ -265,7 +265,7 @@
 				&:has(#package-tab-readme) {
 					border-color: @yellow;
 
-					&:hover {
+					&:has(> a[aria-selected="false"]):hover {
 						background-color: fade(@yellow, 20%);
 					}
 
@@ -277,7 +277,7 @@
 				&:has(#package-tab-admin) {
 					border-color: @red;
 
-					&:hover {
+					&:has(> a[aria-selected="false"]):hover {
 						background-color: fade(@red, 20%);
 					}
 
@@ -293,7 +293,7 @@
 				&:has(#package-tab-packages) {
 					border-color: @mauve;
 
-					&:hover {
+					&:has(> a[aria-selected="false"]):hover {
 						background-color: fade(@mauve, 20%);
 					}
 
@@ -304,7 +304,7 @@
 				&:has(#package-tab-dependencies) {
 					border-color: @pink;
 
-					&:hover {
+					&:has(> a[aria-selected="false"]):hover {
 						background-color: fade(@pink, 20%);
 					}
 
@@ -315,7 +315,7 @@
 				&:has(#package-tab-versions) {
 					border-color: @sapphire;
 
-					&:hover {
+					&:has(> a[aria-selected="false"]):hover {
 						background-color: fade(@sapphire, 20%);
 					}
 
@@ -326,7 +326,7 @@
 				&:has(#package-tab-orgs) {
 					border-color: @green;
 
-					&:hover {
+					&:has(> a[aria-selected="false"]):hover {
 						background-color: fade(@green, 20%);
 					}
 

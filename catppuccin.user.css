@@ -58,9 +58,7 @@
 			background-color: @base !important;
 		}
 
-		& when not (@lookup = latte) {
-			color-scheme: dark;
-		}
+		color-scheme: if(@lookup=latte, light, dark);
 
 		/* Primary background */
 		.bg-white,

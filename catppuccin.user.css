@@ -54,7 +54,8 @@
 
 		@npmGradient: linear-gradient(139deg, @peach, @maroon, @red, @pink);
 
-		& {
+		&,
+		main {
 			background-color: @base !important;
 		}
 
@@ -617,13 +618,23 @@
 		._75ce47e7 {
 			background-color: @base;
 
-			&::before {
-				background-image: @npmGradient;
+			._71252860,
+			.d7eb966d {
+				color: @text;
 			}
 
-			/* Use password button */
-			._75dbe70f {
-				color: @text;
+			[fill="#65C6C9"],
+			[fill="url(#paint1_linear_449_428)"],
+			[fill="url(#paint0_linear_110_3043)"] {
+				fill: @blue;
+			}
+			[fill="url(#paint2_linear_449_428)"],
+			[fill="url(#paint1_linear_110_3043)"] {
+				fill: @base;
+			}
+
+			&::before {
+				background-image: @npmGradient;
 			}
 		}
 		._320f7a67 {
@@ -644,6 +655,14 @@
 
 			#gat-banner span {
 				color: @yellow;
+			}
+		}
+
+		/* Create organization page */
+		div:has(> form[action="/org/create"]) {
+			&,
+			& + div {
+				border-color: @surface0;
 			}
 		}
 

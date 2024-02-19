@@ -119,6 +119,15 @@
 		}
 
 		/* --- HEADER --- */
+		[data-test-id="notification-banner"] {
+			background-color: if(@lookup = latte, desaturate(lighten(@green, 30%), 5%), desaturate(darken(@green, 5%), 5%));
+			border-color: @green;
+
+			#notification,
+			button[aria-label="Close notification"] {
+				color: if(@lookup = latte, @text, @base);
+			}
+		}
 		header {
 			border-bottom-color: @surface0;
 
@@ -154,7 +163,8 @@
 						background-color: @crust;
 
 						input[type="search"] {
-							&,
+							color: @text;
+
 							&::placeholder {
 								color: @overlay1;
 							}
@@ -428,10 +438,14 @@
 
 			/* Back button inside file */
 			._450b46e9 {
+				height: 0 !important;
+				width: 0 !important;
+				padding-top: 16px;
+				padding-left: 12px;
 				@svg: escape(
 					'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" fill="@{text}"><path d="M50.4 74.7L23.7 50l26.7-24.7-5.4-5.9L11.9 50 45 80.6l5.4-5.9z"/><path d="M82.6 19.4L49.6 50l33 30.6 5.5-5.9L61.4 50l26.7-24.7-5.5-5.9z"/></svg>'
 				);
-				background-image: url("data:image/svg+xml,@{svg}");
+				background: url("data:image/svg+xml,@{svg}");
 			}
 
 			ul li {
@@ -442,17 +456,23 @@
 				}
 
 				img {
+					height: 0 !important;
+					width: 0 !important;
 					@folder: escape(
-						'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 122.5" fill="@{surface0}"><path d="M37.9 18.4H13v61.2h72V25H49zM79 73.6H19V44h60zM79 38H19V24.4h17.2L47.3 31H79z"/></svg>'
+						'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 122.5" fill="@{subtext0}"><path d="M37.9 18.4H13v61.2h72V25H49zM79 73.6H19V44h60zM79 38H19V24.4h17.2L47.3 31H79z"/></svg>'
 					);
 					@file: escape(
-						'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" fill="@{surface0}"><path d="M82.2 10.7H38.7l-20.9 19v59.6h64.4zm-44.6 6.4v11.2H25.3zm40.6 68.2H21.8v-53h19.8V14.7h36.6z"/><path d="M34.3 44.7h31.4v4H34.3zm0 13.2h31.4v4H34.3zm0 13.1h31.4v4H34.3z"/></svg>'
+						'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" fill="@{subtext0}"><path d="M82.2 10.7H38.7l-20.9 19v59.6h64.4zm-44.6 6.4v11.2H25.3zm40.6 68.2H21.8v-53h19.8V14.7h36.6z"/><path d="M34.3 44.7h31.4v4H34.3zm0 13.2h31.4v4H34.3zm0 13.1h31.4v4H34.3z"/></svg>'
 					);
 					&._1528cda6 {
-						background-image: url("data:image/svg+xml,@{folder}");
+						padding-top: 25px;
+						padding-left: 20px;
+						background: url("data:image/svg+xml,@{folder}") no-repeat;
 					}
 					&._7ec1ed32 {
-						background-image: url("data:image/svg+xml,@{file}");
+						padding-top: 22.5px;
+						padding-left: 18px;
+						background: url("data:image/svg+xml,@{file}") no-repeat;
 					}
 				}
 			}
@@ -466,6 +486,36 @@
 
 			div:has(+ pre) {
 				background-color: @mantle;
+			}
+			pre {
+				background-color: @base !important;
+				color: @text !important;
+				
+				.react-syntax-highlighter-line-number {
+					color: @subtext1 !important;
+				}
+				
+				[style="color: rgb(102, 102, 102);"] {
+					color: var(--color-prettylights-syntax-comment) !important;
+				}
+				[style="color: rgb(150, 152, 150);"] {
+					color: @overlay0 !important;
+				}
+				[style="color: rgb(0, 92, 197);"] {
+					color: var(--color-prettylights-syntax-constant) !important;
+				}
+				[style="color: rgb(215, 58, 73);"], [style="color: rgb(0, 134, 179);"] {
+					color: var(--color-prettylights-syntax-keyword) !important;
+				}
+				[style="color: rgb(3, 47, 98);"] {
+					color: var(--color-prettylights-syntax-string) !important;
+				}
+				[style="color: rgb(111, 66, 193);"] {
+					color: var(--color-prettylights-syntax-entity) !important;
+				}
+				.hljs-subst, .hljs-built_in {
+					color: var(--color-prettylights-syntax-storage-modifier-import) !important;
+				}
 			}
 		}
 
@@ -851,6 +901,27 @@
 			}
 		}
 
+		--color-prettylights-syntax-comment: @overlay1;
+		--color-prettylights-syntax-constant: @teal;
+		--color-prettylights-syntax-entity: @blue;
+		--color-prettylights-syntax-storage-modifier-import: @peach;
+		--color-prettylights-syntax-entity-tag: @teal;
+		--color-prettylights-syntax-keyword: @mauve;
+		--color-prettylights-syntax-string: @green;
+		--color-prettylights-syntax-variable: @peach;
+		--color-prettylights-syntax-invalid-illegal-text: @red;
+		--color-prettylights-syntax-invalid-illegal-bg: fadeout(@red, 85%);
+		--color-prettylights-syntax-markup-heading: @teal;
+		--color-prettylights-syntax-markup-italic: @yellow;
+		--color-prettylights-syntax-markup-bold: @yellow;
+		--color-prettylights-syntax-markup-deleted-text: @text;
+		--color-prettylights-syntax-markup-deleted-bg: fadeout(@red, 60%);
+		--color-prettylights-syntax-markup-inserted-text: @text;
+		--color-prettylights-syntax-markup-inserted-bg: fadeout(@green, 60%);
+		--color-prettylights-syntax-markup-changed-text: @text;
+		--color-prettylights-syntax-markup-changed-bg: fadeout(@yellow, 60%);
+		--color-prettylights-syntax-markup-ignored-text: @text;
+
 		/* prettier-ignore */
 		& {.pl-mb,.pl-mdr,.pl-sr .pl-cce{font-weight:700}.pl-c{color:var(--color-prettylights-syntax-comment)}.pl-c1,.pl-s .pl-v{color:var(--color-prettylights-syntax-constant)}.pl-e,.pl-en{color:var(--color-prettylights-syntax-entity)}.pl-s .pl-s1,.pl-smi{color:var(--color-prettylights-syntax-storage-modifier-import)}.pl-ent{color:var(--color-prettylights-syntax-entity-tag)}.pl-k{color:var(--color-prettylights-syntax-keyword)}.pl-pds,.pl-s,.pl-s .pl-pse .pl-s1,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre{color:var(--color-prettylights-syntax-string)}.pl-smw,.pl-v{color:var(--color-prettylights-syntax-variable)}.pl-bu{color:var(--color-prettylights-syntax-brackethighlighter-unmatched)}.pl-ii{color:var(--color-prettylights-syntax-invalid-illegal-text);background-color:var(--color-prettylights-syntax-invalid-illegal-bg)}.pl-c2{color:var(--color-prettylights-syntax-carriage-return-text);background-color:var(--color-prettylights-syntax-carriage-return-bg)}.pl-sr .pl-cce{color:var(--color-prettylights-syntax-string-regexp)}.pl-ml{color:var(--color-prettylights-syntax-markup-list)}.pl-mh,.pl-mh .pl-en,.pl-ms{font-weight:700;color:var(--color-prettylights-syntax-markup-heading)}.pl-mi{font-style:italic;color:var(--color-prettylights-syntax-markup-italic)}.pl-mb{color:var(--color-prettylights-syntax-markup-bold)}.pl-md{color:var(--color-prettylights-syntax-markup-deleted-text);background-color:var(--color-prettylights-syntax-markup-deleted-bg)}.pl-mi1{color:var(--color-prettylights-syntax-markup-inserted-text);background-color:var(--color-prettylights-syntax-markup-inserted-bg)}.pl-mc{color:var(--color-prettylights-syntax-markup-changed-text);background-color:var(--color-prettylights-syntax-markup-changed-bg)}.pl-mi2{color:var(--color-prettylights-syntax-markup-ignored-text);background-color:var(--color-prettylights-syntax-markup-ignored-bg)}.pl-mdr{color:var(--color-prettylights-syntax-meta-diff-range)}.pl-ba{color:var(--color-prettylights-syntax-brackethighlighter-angle)}.pl-sg{color:var(--color-prettylights-syntax-sublimelinter-gutter-mark)}.pl-corl{text-decoration:underline;color:var(--color-prettylights-syntax-constant-other-reference-link)}}
 	}
@@ -869,10 +940,6 @@
 
 /* Todos:
 - Cleanup danger/success duplicate styling, button colors in dark flavors
-- File explorer syntax highlighting - WIP: need to fix icons being overlayed
-- Install command copy icon hover state
-- Copy clipboard banner
-- PrettyLights syntax highlighting
 - Finishing touches on https://www.npmjs.com/settings/uncenter/tokens
 - "Link your social accounts" box, usernames and github icon at https://www.npmjs.com/~uncenter (and other profiles)
 - Linked accounts and recvoery options section at https://www.npmjs.com/settings/uncenter/profile
@@ -882,3 +949,4 @@
 - https://www.npmjs.com/products/teams
 - https://www.npmjs.com/products
 */
+
